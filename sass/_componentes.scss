@@ -1,0 +1,68 @@
+@mixin btn-base {
+    padding: 0.25rem 1.5rem;
+    border-radius: 0.25rem;
+}
+@mixin boton-sm {
+    font-size: 0.75rem;
+    padding: 0.1rem 1rem;
+}
+
+$color-principal: #0075FF;
+
+.btn-main {
+    @include btn-base();
+    background-color: $color-principal;
+    color: white;
+    border: none;
+    border: solid 1px $color-principal;
+
+    &:hover {
+        background-color: white;
+        color: $color-principal;
+
+    }
+
+    &-s {
+        @extend .btn-main;
+        @include boton-sm();
+
+    }
+}
+
+//------------------//
+.btn-sec {
+    @include btn-base();
+    color: #000;
+    background-color: transparent;
+    border: none;
+
+    &:hover {
+        color: #888;
+    }
+
+    &-s {
+        @extend .btn-sec;
+        @include boton-sm();
+    }
+}
+
+//-----------------//
+
+.main-menu{
+    li{
+        list-style: none;
+        display: inline;
+        font-size: 1rem;
+    }
+}
+
+.icon-sm{
+    
+    i{
+        font-size: 0.75rem;
+        padding: 0.1rem 0.25rem;
+        color: $color-principal;
+        border-radius: 50%;
+        box-shadow: 0 0 10px #00000040;
+    }
+}
